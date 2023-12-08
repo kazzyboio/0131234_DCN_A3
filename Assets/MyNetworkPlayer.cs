@@ -17,6 +17,8 @@ public class MyNetworkPlayer : NetworkBehaviour
     [SerializeField]
     private Color displayColor = Color.black;
 
+    [SerializeField] private Transform spawnPoint;
+
     #region server
     [Server]
     public void setDisplayName(string newDisplayName)
@@ -43,7 +45,7 @@ public class MyNetworkPlayer : NetworkBehaviour
     }
 
     #endregion
-    
+
     #region client
     private void HandleDisplayColourUpdate (Color oldColor, Color newColor)
     {
